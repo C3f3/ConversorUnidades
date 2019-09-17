@@ -37,14 +37,16 @@ public class ventanaDos extends AppCompatActivity implements OnClickListener {
             String f=casFarh.getText().toString();
 
             if(c.equals("")==true && f.equals("")==false){
-                float x=transCelaFar(Float.parseFloat(c));
-                casFarh.setText(Float.toString(x));
+                float n=Float.parseFloat(f);
+                float x=transFaraCel(n);
+                casCel.setText(Float.toString(x));
+
                 mostrarMensaje("conversion Exitosa");
             }
             else{
                 if(c.equals("")==false && f.equals("")==true){
-                    float x=transFaraCel(Float.parseFloat(f));
-                    casCel.setText(Float.toString(x));
+                    float x=transCelaFar(Float.parseFloat(c));
+                    casFarh.setText(Float.toString(x));
                     mostrarMensaje("Conversion exitosa");
                 }
                 else
@@ -56,13 +58,13 @@ public class ventanaDos extends AppCompatActivity implements OnClickListener {
     }
 
     public float transCelaFar(float c){
-        return (float)(c*1.8+32);
+        return (float)(c*1.8 + 32);
     }
     public float transFaraCel(float f){
         return (float)((f-32)/1.8);
     }
 
     public void mostrarMensaje(String s){
-        //Toast.makeText(this, s,Toast.LENGTH_LONG).show();
+        Toast.makeText(this, s,Toast.LENGTH_LONG).show();
     }
 }
