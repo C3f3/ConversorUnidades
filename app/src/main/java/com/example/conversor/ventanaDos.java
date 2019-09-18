@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ventanaDos extends AppCompatActivity implements OnClickListener {
-    private Button bConvertir;
+    private Button bConvertir,bLimpiar;
     private EditText casCel,casFarh;
 
     @Override
@@ -24,10 +24,12 @@ public class ventanaDos extends AppCompatActivity implements OnClickListener {
         casFarh=(EditText)findViewById(R.id.casFahren);
 
         bConvertir=(Button)findViewById(R.id.botonConvertir);
+        bLimpiar=(Button)findViewById(R.id.botonLimpiar);
 
 
         //linkeo el escuchador
         bConvertir.setOnClickListener(this);
+        bLimpiar.setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +56,13 @@ public class ventanaDos extends AppCompatActivity implements OnClickListener {
                     mostrarMensaje("Error de Conversion!!");
                 }
             }
+        }
+        else{
+            if(v.getId()==R.id.botonLimpiar){
+                casCel.setText("");
+                casFarh.setText("");
+            }
+
         }
     }
 

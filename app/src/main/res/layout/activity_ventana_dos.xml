@@ -35,12 +35,27 @@
         android:hint="grados ºF"
         />
 
-    <Button
-        android:id="@+id/botonConvertir"
 
-        android:layout_width="287dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:text="convertir" />
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/botonConvertir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Convertir" />
+        <Button
+            android:id="@+id/botonLimpiar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Limpiar" />
+    </LinearLayout>
+
+
 
 </LinearLayout>
